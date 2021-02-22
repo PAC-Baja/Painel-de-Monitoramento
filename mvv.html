@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Painel de OKR's</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" type="image/ico" href="images/icon.ico"/>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+	<script type="text/javascript" src = "sheets_integration.js"></script>
+</head>
+<body>
+	<header>
+		<img src="images/logo.png">
+		<h1>Painel de objetivos e resultados chaves</h1>
+		<nav>
+			<a href="index.html">Inicio</a>
+			<a href="mvv.html" class = "active">MVV</a>
+			<a href="gerais.html">Obj. Gerais</a>
+			<!--<a href="especi.html">KR's específicos</a>-->
+			<a href="setor.html">KR's por setor</a>
+			<a href="dash.html">Dashboard</a>
+			<p id="hora"></p>
+		</nav>
+	</header>
+	<main>
+		<section class="comum">
+			<h2>Missão, visão e valores</h2>
+			<div class = "mvv"><h3>Missão</h3><p id="missao"></p></div>
+			<div class = "mvv"><h3>Visão</h3><p id="visao"></p></div>
+			<div class = "mvv"><h3>Valores</h3><p id="valores"></p></div>
+		</section>
+	</main>
+</body>
+<script type="text/javascript">
+	function showInfo(data, tabletop) {
+    // Caso queria adicionar um alerta
+    //alert('Os resultados foram atualizados') 
+    
+    // Usar dados puxados para substituir elementos
+
+    document.getElementById("hora").innerHTML = "Atualizado em: " + data[0].horario;
+    document.getElementById("missao").innerHTML = data[0].mvv;
+    document.getElementById("visao").innerHTML = data[1].mvv;
+    document.getElementById("valores").innerHTML = data[2].mvv;
+    document.getElementById("geral1").innerHTML = data[0].gerais1;
+
+
+    console.log(data);
+  }
+</script>
+</html>

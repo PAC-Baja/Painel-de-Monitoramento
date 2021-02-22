@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Painel de OKR's</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" type="image/ico" href="images/icon.ico"/>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+	<script type="text/javascript" src = "sheets_integration.js"></script>
+</head>
+<body>
+	<header>
+		<img src="images/logo.png">
+		<h1>Painel de objetivos e resultados chaves</h1>
+		<nav>
+			<a href="index.html">Inicio</a>
+			<a href="mvv.html">MVV</a>
+			<a href="gerais.html" class = "active">Obj. Gerais</a>
+			<!--<a href="especi.html">KR's específicos</a> -->
+			<a href="setor.html">KR's por setor</a>
+			<a href="dash.html">Dashboard</a>
+			<p id="hora"></p>
+		</nav>
+	</header>
+	
+	<main>
+
+		<section class="comum">
+			<h2>Objetivos gerais</h2>
+			<p>Nessa seção são apresentados os objetivos gerais e seus resultados chaves.</p>
+
+			<div><table>
+				<tr><th colspan="3" id="geral(0,0)"></th></tr>
+				<tr><th id="cab1"></th><th id="cab2"></th> <th id="cab3"></th></tr>
+				<tr><td id="geral(0,1)"> </td> <td id="geral(0,2)"></td> <td id="geral(0,3)"></td></tr>
+			</table></div>
+
+			<div><table>
+				<tr><th colspan="3" id="geral(1,0)"></th></tr>
+				<tr><th id="cab11"></th> <th id="cab21"></th><th id="cab31"></th></tr>
+				<tr><td id="geral(1,1)"> </td> <td id="geral(1,2)"></td> <td id="geral(1,3)"></td></tr>
+				<tr><td id="geral(1,4)"> </td> <td id="geral(1,5)"></td> <td id="geral(1,6)"></td></tr>
+				<tr><td id="geral(1,7)"> </td> <td id="geral(1,8)"></td> <td id="geral(1,9)"></td></tr>
+			</table></div>
+
+			<div><table>
+				<tr><th colspan="3" id="geral(2,0)"></th></tr>
+				<tr><th id="cab12"></th> <th id="cab22"></th> <th id="cab32"></th></tr>
+				<tr><td id="geral(2,1)"> </td> <td id="geral(2,2)"></td> <td id="geral(2,3)"></td></tr>
+				<tr><td id="geral(2,4)"> </td> <td id="geral(2,5)"></td> <td id="geral(2,6)"></td></tr>
+				<tr><td id="geral(2,7)"> </td> <td id="geral(2,8)"></td> <td id="geral(2,9)"></td></tr>
+				<tr><td id="geral(2,10)"> </td> <td id="geral(2,11)"></td> <td id="geral(2,12)"></td></tr>
+			</table></div>
+
+			<div>
+			<table>
+				<tr><th colspan="3" id="geral(3,0)"></th></tr>
+				<tr><th id="cab13"></th> <th id="cab23"></th> <th id="cab33"></th></tr>
+				<tr><td id="geral(3,1)"> </td> <td id="geral(3,2)"></td> <td id="geral(3,3)"></td></tr>
+				<tr><td id="geral(3,4)"> </td> <td id="geral(3,5)"></td> <td id="geral(3,6)"></td></tr>
+			</table>
+			</div>			
+		</section>
+
+	</main>
+</body>
+<script type="text/javascript">
+	function showInfo(data, tabletop) {
+    // Caso queria adicionar um alerta
+    //alert('Os resultados foram atualizados') 
+    
+    // Usar dados puxados para substituir elementos
+
+    document.getElementById("hora").innerHTML = "Atualizado em: " + data[0].horario;
+    
+    document.getElementById("cab1").innerHTML = data[1].geralCab;
+    document.getElementById("cab2").innerHTML = data[2].geralCab;
+    document.getElementById("cab3").innerHTML = data[3].geralCab;
+    document.getElementById("cab11").innerHTML = data[1].geralCab;
+    document.getElementById("cab21").innerHTML = data[2].geralCab;
+    document.getElementById("cab31").innerHTML = data[3].geralCab;
+    document.getElementById("cab12").innerHTML = data[1].geralCab;
+    document.getElementById("cab22").innerHTML = data[2].geralCab;
+    document.getElementById("cab32").innerHTML = data[3].geralCab;
+    document.getElementById("cab13").innerHTML = data[1].geralCab;
+    document.getElementById("cab23").innerHTML = data[2].geralCab;
+    document.getElementById("cab33").innerHTML = data[3].geralCab;
+
+    document.getElementById("geral(0,0)").innerHTML = data[0].geral0;
+    document.getElementById("geral(0,1)").innerHTML = data[1].geral0;
+    document.getElementById("geral(0,2)").innerHTML = data[2].geral0;
+    document.getElementById("geral(0,3)").innerHTML = data[3].geral0;
+
+    document.getElementById("geral(1,0)").innerHTML = data[0].geral1;
+    document.getElementById("geral(1,1)").innerHTML = data[1].geral1;
+    document.getElementById("geral(1,2)").innerHTML = data[2].geral1;
+    document.getElementById("geral(1,3)").innerHTML = data[3].geral1;
+    document.getElementById("geral(1,4)").innerHTML = data[4].geral1;
+    document.getElementById("geral(1,5)").innerHTML = data[5].geral1;
+    document.getElementById("geral(1,6)").innerHTML = data[6].geral1;
+    document.getElementById("geral(1,7)").innerHTML = data[7].geral1;
+    document.getElementById("geral(1,8)").innerHTML = data[8].geral1;
+    document.getElementById("geral(1,9)").innerHTML = data[9].geral1;
+    
+    document.getElementById("geral(2,0)").innerHTML = data[0].geral2;
+    document.getElementById("geral(2,1)").innerHTML = data[1].geral2;
+    document.getElementById("geral(2,2)").innerHTML = data[2].geral2;
+    document.getElementById("geral(2,3)").innerHTML = data[3].geral2;
+    document.getElementById("geral(2,4)").innerHTML = data[4].geral2;
+    document.getElementById("geral(2,5)").innerHTML = data[5].geral2;
+    document.getElementById("geral(2,6)").innerHTML = data[6].geral2;
+    document.getElementById("geral(2,7)").innerHTML = data[7].geral2;
+    document.getElementById("geral(2,8)").innerHTML = data[8].geral2;
+    document.getElementById("geral(2,9)").innerHTML = data[9].geral2;
+    document.getElementById("geral(2,10)").innerHTML = data[10].geral2;
+    document.getElementById("geral(2,11)").innerHTML = data[11].geral2;
+    document.getElementById("geral(2,12)").innerHTML = data[12].geral2;
+    
+    document.getElementById("geral(3,0)").innerHTML = data[0].geral3;
+    document.getElementById("geral(3,1)").innerHTML = data[1].geral3;
+    document.getElementById("geral(3,2)").innerHTML = data[2].geral3;
+    document.getElementById("geral(3,3)").innerHTML = data[3].geral3;
+    document.getElementById("geral(3,4)").innerHTML = data[4].geral3;
+    document.getElementById("geral(3,5)").innerHTML = data[5].geral3;
+    document.getElementById("geral(3,6)").innerHTML = data[6].geral3;
+
+
+    console.log(data);
+  }
+</script>
+</html>
