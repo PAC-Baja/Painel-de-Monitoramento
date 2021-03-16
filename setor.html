@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>Painel de Monitoramento</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/ico" href="images/icon.ico"/>
+	<script>
+	function openT(table,check) {
+	x=document.getElementById(table);
+	y=document.getElementById(check);
+	x.style.display = y.checked ? "block" : "none";
+	}
+	</script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+	<script type="text/javascript" src = "sheets_integration.js"></script>
+
+</head>
+<body>
+	 <header>
+        <img src="images/logo.png">
+        <h1>Painel de monitoramento</h1>
+        <nav>
+            <a href="index.html" >Inicio</a>
+            <a href="obj.html">Objetivos</a>
+            <a href="geral.html" >Resultados Gerais</a>
+            <a href="setor.html" class = "active">Resultados Específicos</a>
+            <a href="dash.html">Dashboard</a>
+            <p id="hora"></p>
+        </nav>
+    </header>
+	<main>
+		<section class="comum">
+			<h2>Resultados específicos</h2>
+			<p>Nessa seção, são apresentados os resultados de responsabilidade específica dos setores.</p>
+
+			<p>Selecione o que deseja visualizar:</p>
+			
+			<p> 
+			<input type = "checkbox" id="aqCheck" onclick="openT('aq','aqCheck')">Aquisição de dados <input type = "checkbox" id="calcCheck" onclick="openT('calc','calcCheck')">Cálculo Estrutural <input type = "checkbox" id="capCheck" onclick="openT('cap','capCheck')">Capitão <input type = "checkbox" id="chaCheck" onclick="openT('cha','chaCheck')">Chassi <input type = "checkbox" id="desCheck" onclick="openT('des','desCheck')">Design <input type = "checkbox" id="eleCheck" onclick="openT('ele','eleCheck')">Eletrônica <input type = "checkbox" id="finCheck" onclick="openT('fin','finCheck')">Finanças <input type = "checkbox" id="freCheck" onclick="openT('fre','freCheck')">Freios <input type = "checkbox" id="admCheck" onclick="openT('adm','admCheck')">Gerente administrativo
+			</p>
+			
+			<p>
+			<input type = "checkbox" id="pmCheck" onclick="openT('pm','pmCheck')">Gerente de projetos <input type = "checkbox" id="gpCheck" onclick="openT('gp','gpCheck')">Gestão de pessoas <input type = "checkbox" id="inovCheck" onclick="openT('inov','inovCheck')">Inovação e tecnologia <input type = "checkbox" id="powCheck" onclick="openT('pow','powCheck')">Powertrain <input type = "checkbox" id="rpCheck" onclick="openT('rp','rpCheck')">RP/MTK  <input type = "checkbox" id="sdCheck" onclick="openT('sd','sdCheck')">Suspensão e direção </p>
+			
+
+			<div id="aq"><h3>Aquisição de dados</h3>
+			</div>
+
+			<div id="calc"><h3>Cálculo Estrutural</h3>
+			</div>
+
+			<div id="cap"><h3>Capitão</h3>
+			</div>
+
+			<div id="cha"><h3>Chassi</h3>
+			</div>
+
+			<div id="des"><h3>Design</h3>
+			</div>
+
+			<div id="ele">
+			</div>
+
+			<div id="fin"><h3>Finanças</h3>
+			</div>
+
+			<div id="fre"><h3>Freios</h3>
+			</div>
+
+			<div id="adm"><h3>Gerente administrativo</h3>
+			</div>
+
+			<div id="pm"><h3>Gerente de projetos</h3>
+
+			<div><table>
+				<tr><th colspan="4" id="pm0"></th></tr>
+				<tr><th>Resultado desejado</th><th> Valor atual</th> <th>Prazo</th> <th>Status</th></tr>
+				<tr><td id="pm(0,0,0)"></td> <td id="pm(0,0,1)"></td> <td id="pm(0,0,2)"></td> <td id="pm(0,0,3)"></td></tr>
+                <tr><td id="pm(0,1,0)"></td> <td id="pm(0,1,1)"></td> <td id="pm(0,1,2)"></td> <td id="pm(0,1,3)"></td></tr>
+                <tr><td id="pm(0,2,0)"></td> <td id="pm(0,2,1)"></td> <td id="pm(0,2,2)"></td> <td id="pm(0,2,3)"></td></tr>
+			</table></div>
+
+			<div><table>
+				<tr><th colspan="4" id="pm1"></th></tr>
+				<tr><th>Resultado desejado</th><th> Valor atual</th> <th>Prazo</th> <th>Status</th></tr>
+				<tr><td id="pm(1,0,0)"></td> <td id="pm(1,0,1)"></td> <td id="pm(1,0,2)"></td> <td id="pm(1,0,3)"></td></tr>
+              </table></div>
+              
+			</div>
+
+			<div id="gp"><h3>Gestão de pessoas</h3>
+			</div>
+
+			<div id="inov"><h3>Inovação e tecnologia</h3>
+			</div>
+
+			<div id="pow"><h3>Powertrain</h3>
+			</div>
+
+			<div id="rp"><h3>RP/MTK</h3>
+			</div>
+
+			<div id="sd"><h3>Suspensão e direção</h3>
+			</div>
+	
+		</section>
+	</main>
+</body>
+<script type="text/javascript">
+	function showInfo(data, tabletop) {
+    // Caso queria adicionar um alerta
+    //alert('Os resultados foram atualizados') 
+    
+    // Usar dados puxados para substituir elementos
+
+    document.getElementById("hora").innerHTML = "Atualizado em: " + data[0].att_data;
+
+    //GERENTE DE PROJETOS
+    
+    document.getElementById("pm0").innerHTML = "Objetivo: " + data[0].objetivos;
+    document.getElementById("pm1").innerHTML = "Objetivo: " + data[1].objetivos;
+
+    document.getElementById("pm(0,0,0)").innerHTML = data[0].pm0;
+    document.getElementById("pm(0,0,1)").innerHTML = data[1].pm0;
+    document.getElementById("pm(0,0,2)").innerHTML = data[2].pm0;
+    document.getElementById("pm(0,0,3)").innerHTML = data[3].pm0;
+    document.getElementById("pm(0,1,0)").innerHTML = data[5].pm0;
+    document.getElementById("pm(0,1,1)").innerHTML = data[6].pm0;
+    document.getElementById("pm(0,1,2)").innerHTML = data[7].pm0;
+    document.getElementById("pm(0,1,3)").innerHTML = data[8].pm0;
+	document.getElementById("pm(0,2,0)").innerHTML = data[10].pm0;
+    document.getElementById("pm(0,2,1)").innerHTML = data[11].pm0;
+    document.getElementById("pm(0,2,2)").innerHTML = data[12].pm0;
+    document.getElementById("pm(0,2,3)").innerHTML = data[13].pm0;
+    
+    document.getElementById("pm(1,0,0)").innerHTML = data[0].pm1;
+    document.getElementById("pm(1,0,1)").innerHTML = data[1].pm1;
+    document.getElementById("pm(1,0,2)").innerHTML = data[2].pm1;
+    document.getElementById("pm(1,0,3)").innerHTML = data[3].pm1;
+
+
+    
+    
+    console.log(data);
+  }
+</script>
+</html>
