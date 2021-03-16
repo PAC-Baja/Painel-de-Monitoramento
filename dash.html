@@ -26,4 +26,16 @@
 <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRuz4-D1WuY0VfRBaF2R_1mzFttj9_rGlFucEmpjCAIFnaQKv5QPcw7QrPOw3mykTDE0Qk2NpFzNJiI/pubhtml?gid=748303940&amp;single=true&amp;widget=true&amp;headers=false&gridlines=false&chrome=false" frameborder="0" width="100%" height="750"></iframe>
 	</main>
 </body>
-</html>
+<script type="text/javascript">
+	function showInfo(data, tabletop) {
+    // Caso queria adicionar um alerta
+    //alert('Os resultados foram atualizados') 
+    
+    // Usar dados puxados para substituir elementos
+
+    document.getElementById("hora").innerHTML = "Atualizado em: " + data[0].att_data;
+
+	console.log(data);
+  }
+</script>
+	</html>
