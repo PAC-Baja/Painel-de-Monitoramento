@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>Painel de Monitoramento</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/ico" href="images/icon.ico"/>
+	<script>
+	function openT(table,check) {
+	x=document.getElementById(table);
+	y=document.getElementById(check);
+	x.style.display = y.checked ? "block" : "none";
+	}
+	</script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+	<script type="text/javascript" src = "sheets_integration.js"></script>
+
+</head>
+<body>
+	 <header>
+        <img src="images/logo.png">
+        <h1>Painel de monitoramento</h1>
+        <nav>
+            <a href="index.html" >Inicio</a>
+            <a href="obj.html">Objetivos</a>
+            <a href="geral.html" >Resultados Gerais</a>
+            <a href="setor.html" class = "active">Resultados Específicos</a>
+            <a href="dash.html">Dashboard</a>
+            <p id="hora"></p>
+        </nav>
+    </header>
+	<main>
+		<section class="comum">
+			<h2>Resultados específicos</h2>
+			<p>Nessa seção, são apresentados os resultados de responsabilidade específica dos setores.</p>
+
+			<p>Selecione o que deseja visualizar:</p>
+			
+			<p> 
+			<input type = "checkbox" id="aqCheck" onclick="openT('aq','aqCheck')">Aquisição de dados <input type = "checkbox" id="calcCheck" onclick="openT('calc','calcCheck')">Cálculo Estrutural<input type = "checkbox" id="chaCheck" onclick="openT('cha','chaCheck')">Chassi e Design<input type = "checkbox" id="eleCheck" onclick="openT('ele','eleCheck')">Eletrônica <input type = "checkbox" id="finCheck" onclick="openT('fin','finCheck')">Finanças <input type = "checkbox" id="freCheck" onclick="openT('fre','freCheck')">Freios
+			</p>
+			
+			<p>
+			<input type = "checkbox" id="pmCheck" onclick="openT('pm','pmCheck')">Gestores <input type = "checkbox" id="gpCheck" onclick="openT('gp','gpCheck')">Gestão de pessoas <input type = "checkbox" id="quaCheck" onclick="openT('qua','quaCheck')">Qualidade e tecnologia <input type = "checkbox" id="powCheck" onclick="openT('pow','powCheck')">Powertrain <input type = "checkbox" id="rpCheck" onclick="openT('rp','rpCheck')">RP/MTK  <input type = "checkbox" id="sdCheck" onclick="openT('sd','sdCheck')">Suspensão e direção </p>
+			
+
+			<div id="aq"><h3>Aquisição de dados</h3>
+			
+			<div><table>
+				<tr><th colspan="4" id="aq0"></th></tr>
+				<tr><th>Resultado desejado</th><th> Valor atual</th> <th>Prazo</th> <th>Status</th></tr>
+				<tr><td id="aq(0,0,0)"></td> <td id="aq(0,0,1)"></td> <td id="aq(0,0,2)"></td> <td id="aq(0,0,3)"></td></tr>
+			</table></div>
+
+			<div><table>
+				<tr><th colspan="4" id="aq1"></th></tr>
+				<tr><th>Resultado desejado</th><th> Valor atual</th> <th>Prazo</th> <th>Status</th></tr>
+				<tr><td id="aq(1,0,0)"></td> <td id="aq(1,0,1)"></td> <td id="aq(1,0,2)"></td> <td id="aq(1,0,3)"></td></tr>
+			</table></div>
+
+			<div><table>
+				<tr><th colspan="4" id="aq2"></th></tr>
+				<tr><th>Resultado desejado</th><th> Valor atual</th> <th>Prazo</th> <th>Status</th></tr>
+				<tr><td id="aq(2,0,0)"></td> <td id="aq(2,0,1)"></td> <td id="aq(2,0,2)"></td> <td id="aq(2,0,3)"></td></tr>
+			</table></div>
+
+			<div><table>
+				<tr><th colspan="4" id="aq3"></th></tr>
+				<tr><th>Resultado desejado</th><th> Valor atual</th> <th>Prazo</th> <th>Status</th></tr>
+				<tr><td id="aq(3,0,0)"></td> <td id="aq(3,0,1)"></td> <td id="aq(3,0,2)"></td> <td id="aq(3,0,3)"></td></tr>
+			</table></div>
+
+
+			</div>
+
+			<div id="calc"><h3>Cálculo Estrutural</h3>
+			<div><table>
+				<tr><th colspan="4" id="calc0"></th></tr>
+				<tr><th>Resultado desejado</th><th> Valor atual</th> <th>Prazo</th> <th>Status</th></tr>
+				<tr><td id="calc(0,0,0)"></td> <td id="calc(0,0,1)"></td> <td id="calc(0,0,2)"></td> <td id="calc(0,0,3)"></td></tr>
+				<tr><td id="calc(0,1,0)"></td> <td id="calc(0,1,1)"></td> <td id="calc(0,1,2)"></td> <td id="calc(0,1,3)"></td></tr>
+				<tr><td id="calc(0,2,0)"></td> <td id="calc(0,2,1)"></td> <td id="calc(0,2,2)"></td> <td id="calc(0,2,3)"></td></tr>
+				<tr><td id="calc(0,3,0)"></td> <td id="calc(0,3,1)"></td> <td id="calc(0,3,2)"></td> <td id="calc(0,3,3)"></td></tr>
+				<tr><td id="calc(0,4,0)"></td> <td id="calc(0,4,1)"></td> <td id="calc(0,4,2)"></td> <td id="calc(0,4,3)"></td></tr>
+				<tr><td id="calc(0,5,0)"></td> <td id="calc(0,5,1)"></td> <td id="calc(0,5,2)"></td> <td id="calc(0,5,3)"></td></tr>
+			</table></div>
+			</div>
+
+			<div id="cha"><h3>Chassi e Design</h3>
+			<div><table>
+				<tr><th colspan="4" id="cha0"></th></tr>
+				<tr><th>Resultado desejado</th><th> Valor atual</th> <th>Prazo</th> <th>Status</th></tr>
+				<tr><td id="cha(0,0,0)"></td> <td id="cha(0,0,1)"></td> <td id="cha(0,0,2)"></td> <td id="cha(0,0,3)"></td></tr>
+				<tr><td id="cha(0,1,0)"></td> <td id="cha(0,1,1)"></td> <td id="cha(0,1,2)"></td> <td id="cha(0,1,3)"></td></tr>
+				<tr><td id="cha(0,2,0)"></td> <td id="cha(0,2,1)"></td> <td id="cha(0,2,2)"></td> <td id="cha(0,2,3)"></td></tr>
+				<tr><td id="cha(0,3,0)"></td> <td id="cha(0,3,1)"></td> <td id="cha(0,3,2)"></td> <td id="cha(0,3,3)"></td></tr>
+			</table></div>
+
+			<div><table>
+				<tr><th colspan="4" id="cha1"></th></tr>
+				<tr><th>Resultado desejado</th><th> Valor atual</th> <th>Prazo</th> <th>Status</th></tr>
+				<tr><td id="cha(1,0,0)"></td> <td id="cha(1,0,1)"></td> <td id="cha(1,0,2)"></td> <td id="cha(1,0,3)"></td></tr>
+			</table></div>
+
+			<div><table>
+				<tr><th colspan="4" id="cha2"></th></tr>
+				<tr><th>Resultado desejado</th><th> Valor atual</th> <th>Prazo</th> <th>Status</th></tr>
+				<tr><td id="cha(2,0,0)"></td> <td id="cha(2,0,1)"></td> <td id="cha(2,0,2)"></td> <td id="cha(2,0,3)"></td></tr>
+				<tr><td id="cha(2,1,0)"></td> <td id="cha(2,1,1)"></td> <td id="cha(2,1,2)"></td> <td id="cha(2,1,3)"></td></tr>
+				<tr><td id="cha(2,2,0)"></td> <td id="cha(2,2,1)"></td> <td id="cha(2,2,2)"></td> <td id="cha(2,2,3)"></td></tr>
+			</table></div>
+
+			<div><table>
+				<tr><th colspan="4" id="cha3"></th></tr>
+				<tr><th>Resultado desejado</th><th> Valor atual</th> <th>Prazo</th> <th>Status</th></tr>
+				<tr><td id="cha(3,0,0)"></td> <td id="cha(3,0,1)"></td> <td id="cha(3,0,2)"></td> <td id="cha(3,0,3)"></td></tr>
+				<tr><td id="cha(3,1,0)"></td> <td id="cha(3,1,1)"></td> <td id="cha(3,1,2)"></td> <td id="cha(3,1,3)"></td></tr>
+				<tr><td id="cha(3,2,0)"></td> <td id="cha(3,2,1)"></td> <td id="cha(3,2,2)"></td> <td id="cha(3,2,3)"></td></tr>
+			</table></div>
+
+			</div>
+
+			<div id="ele"><h3>Eletrônica</h3>
+			<div><table>
+				<tr><th colspan="4" id="ele0"></th></tr>
+				<tr><th>Resultado desejado</th><th> Valor atual</th> <th>Prazo</th> <th>Status</th></tr>
+				<tr><td id="ele(0,0,0)"></td> <td id="ele(0,0,1)"></td> <td id="ele(0,0,2)"></td> <td id="ele(0,0,3)"></td></tr>
+				<tr><td id="ele(0,1,0)"></td> <td id="ele(0,1,1)"></td> <td id="ele(0,1,2)"></td> <td id="ele(0,1,3)"></td></tr>
+				<tr><td id="ele(0,2,0)"></td> <td id="ele(0,2,1)"></td> <td id="ele(0,2,2)"></td> <td id="ele(0,2,3)"></td></tr>
+			</table></div>
+
+			<div><table>
+				<tr><th colspan="4" id="ele1"></th></tr>
+				<tr><th>Resultado desejado</th><th> Valor atual</th> <th>Prazo</th> <th>Status</th></tr>
+				<tr><td id="ele(1,0,0)"></td> <td id="ele(1,0,1)"></td> <td id="ele(1,0,2)"></td> <td id="ele(1,0,3)"></td></tr>
+			</table></div>
+
+			<div><table>
+				<tr><th colspan="4" id="ele2"></th></tr>
+				<tr><th>Resultado desejado</th><th> Valor atual</th> <th>Prazo</th> <th>Status</th></tr>
+				<tr><td id="ele(2,0,0)"></td> <td id="ele(2,0,1)"></td> <td id="ele(2,0,2)"></td> <td id="ele(2,0,3)"></td></tr>
+				<tr><td id="ele(2,1,0)"></td> <td id="ele(2,1,1)"></td> <td id="ele(2,1,2)"></td> <td id="ele(2,1,3)"></td></tr>
+			</table></div>
+
+			<div><table>
+				<tr><th colspan="4" id="ele3"></th></tr>
+				<tr><th>Resultado desejado</th><th> Valor atual</th> <th>Prazo</th> <th>Status</th></tr>
+				<tr><td id="ele(3,0,0)"></td> <td id="ele(3,0,1)"></td> <td id="ele(3,0,2)"></td> <td id="ele(3,0,3)"></td></tr>
+			</table></div>
+
+			</div>
+
+			<div id="fin"><h3>Finanças</h3>
+			</div>
+
+			<div id="fre"><h3>Freios</h3>
+
+			<div><table>
+				<tr><th colspan="4" id="fre0"></th></tr>
+				<tr><th>Resultado desejado</th><th> Valor atual</th> <th>Prazo</th> <th>Status</th></tr>
+				<tr><td id="fre(0,0,0)"></td> <td id="fre(0,0,1)"></td> <td id="fre(0,0,2)"></td> <td id="fre(0,0,3)"></td></tr>
+				<tr><td id="fre(0,1,0)"></td> <td id="fre(0,1,1)"></td> <td id="fre(0,1,2)"></td> <td id="fre(0,1,3)"></td></tr>
+				<tr><td id="fre(0,2,0)"></td> <td id="fre(0,2,1)"></td> <td id="fre(0,2,2)"></td> <td id="fre(0,2,3)"></td></tr>
+			</table></div>
+
+
+			<div><table>
+				<tr><th colspan="4" id="fre1"></th></tr>
+				<tr><th>Resultado desejado</th><th> Valor atual</th> <th>Prazo</th> <th>Status</th></tr>
+				<tr><td id="fre(1,0,0)"></td> <td id="fre(1,0,1)"></td> <td id="fre(1,0,2)"></td> <td id="fre(1,0,3)"></td></tr>
+			</table></div>
+
+
+			<div><table>
+				<tr><th colspan="4" id="fre2"></th></tr>
+				<tr><th>Resultado desejado</th><th> Valor atual</th> <th>Prazo</th> <th>Status</th></tr>
+				<tr><td id="fre(2,0,0)"></td> <td id="fre(2,0,1)"></td> <td id="fre(2,0,2)"></td> <td id="fre(2,0,3)"></td></tr>
+				<tr><td id="fre(2,1,0)"></td> <td id="fre(2,1,1)"></td> <td id="fre(2,1,2)"></td> <td id="fre(2,1,3)"></td></tr>
+			</table></div>
+
+			<div><table>
+				<tr><th colspan="4" id="fre3"></th></tr>
+				<tr><th>Resultado desejado</th><th> Valor atual</th> <th>Prazo</th> <th>Status</th></tr>
+				<tr><td id="fre(3,0,0)"></td> <td id="fre(3,0,1)"></td> <td id="fre(3,0,2)"></td> <td id="fre(3,0,3)"></td></tr>
+				<tr><td id="fre(3,1,0)"></td> <td id="fre(3,1,1)"></td> <td id="fre(3,1,2)"></td> <td id="fre(3,1,3)"></td></tr>
+			</table></div>
+			</div>
+
+			<div id="pm"><h3>Gestores</h3>
+
+			<div><table>
+				<tr><th colspan="4" id="pm0"></th></tr>
+				<tr><th>Resultado desejado</th><th> Valor atual</th> <th>Prazo</th> <th>Status</th></tr>
+				<tr><td id="pm(0,0,0)"></td> <td id="pm(0,0,1)"></td> <td id="pm(0,0,2)"></td> <td id="pm(0,0,3)"></td></tr>
+                <tr><td id="pm(0,1,0)"></td> <td id="pm(0,1,1)"></td> <td id="pm(0,1,2)"></td> <td id="pm(0,1,3)"></td></tr>
+                <tr><td id="pm(0,2,0)"></td> <td id="pm(0,2,1)"></td> <td id="pm(0,2,2)"></td> <td id="pm(0,2,3)"></td></tr>
+			</table></div>
+
+			<div><table>
+				<tr><th colspan="4" id="pm1"></th></tr>
+				<tr><th>Resultado desejado</th><th> Valor atual</th> <th>Prazo</th> <th>Status</th></tr>
+				<tr><td id="pm(1,0,0)"></td> <td id="pm(1,0,1)"></td> <td id="pm(1,0,2)"></td> <td id="pm(1,0,3)"></td></tr>
+              </table></div>
+              
+			</div>
+
+			<div id="gp"><h3>Gestão de pessoas</h3>
+			</div>
+
+			<div id="qua"><h3>Qualidade e tecnologia</h3>
+			</div>
+
+			<div id="pow"><h3>Powertrain</h3>
+			<div><table>
+				<tr><th colspan="4" id="pow0"></th></tr>
+				<tr><th>Resultado desejado</th><th> Valor atual</th> <th>Prazo</th> <th>Status</th></tr>
+				<tr><td id="pow(0,0,0)"></td> <td id="pow(0,0,1)"></td> <td id="pow(0,0,2)"></td> <td id="pow(0,0,3)"></td></tr>
+				<tr><td id="pow(0,1,0)"></td> <td id="pow(0,1,1)"></td> <td id="pow(0,1,2)"></td> <td id="pow(0,1,3)"></td></tr>
+				<tr><td id="pow(0,2,0)"></td> <td id="pow(0,2,1)"></td> <td id="pow(0,2,2)"></td> <td id="pow(0,2,3)"></td></tr>
+				<tr><td id="pow(0,3,0)"></td> <td id="pow(0,3,1)"></td> <td id="pow(0,3,2)"></td> <td id="pow(0,3,3)"></td></tr>
+			</table></div>
+
+			<div><table>
+				<tr><th colspan="4" id="pow1"></th></tr>
+				<tr><th>Resultado desejado</th><th> Valor atual</th> <th>Prazo</th> <th>Status</th></tr>
+				<tr><td id="pow(1,0,0)"></td> <td id="pow(1,0,1)"></td> <td id="pow(1,0,2)"></td> <td id="pow(1,0,3)"></td></tr>
+				<tr><td id="pow(1,1,0)"></td> <td id="pow(1,1,1)"></td> <td id="pow(1,1,2)"></td> <td id="pow(1,1,3)"></td></tr>
+			</table></div>
+
+			<div><table>
+				<tr><th colspan="4" id="pow2"></th></tr>
+				<tr><th>Resultado desejado</th><th> Valor atual</th> <th>Prazo</th> <th>Status</th></tr>
+				<tr><td id="pow(2,0,0)"></td> <td id="pow(2,0,1)"></td> <td id="pow(2,0,2)"></td> <td id="pow(2,0,3)"></td></tr>
+			</table></div>
+
+			<div><table>
+				<tr><th colspan="4" id="pow3"></th></tr>
+				<tr><th>Resultado desejado</th><th> Valor atual</th> <th>Prazo</th> <th>Status</th></tr>
+				<tr><td id="pow(3,0,0)"></td> <td id="pow(3,0,1)"></td> <td id="pow(3,0,2)"></td> <td id="pow(3,0,3)"></td></tr>
+				<tr><td id="pow(3,1,0)"></td> <td id="pow(3,1,1)"></td> <td id="pow(3,1,2)"></td> <td id="pow(3,1,3)"></td></tr>
+				<tr><td id="pow(3,2,0)"></td> <td id="pow(3,2,1)"></td> <td id="pow(3,2,2)"></td> <td id="pow(3,2,3)"></td></tr>
+			</table></div>
+
+			</div>
+
+			<div id="rp"><h3>RP/MTK</h3>
+			</div>
+
+			<div id="sd"><h3>Suspensão e direção</h3>
+			
+			<div><table>
+				<tr><th colspan="4" id="sd0"></th></tr>
+				<tr><th>Resultado desejado</th><th> Valor atual</th> <th>Prazo</th> <th>Status</th></tr>
+				<tr><td id="sd(0,0,0)"></td> <td id="sd(0,0,1)"></td> <td id="sd(0,0,2)"></td> <td id="sd(0,0,3)"></td></tr>
+				<tr><td id="sd(0,1,0)"></td> <td id="sd(0,1,1)"></td> <td id="sd(0,1,2)"></td> <td id="sd(0,1,3)"></td></tr>
+				<tr><td id="sd(0,2,0)"></td> <td id="sd(0,2,1)"></td> <td id="sd(0,2,2)"></td> <td id="sd(0,2,3)"></td></tr>
+				<tr><td id="sd(0,3,0)"></td> <td id="sd(0,3,1)"></td> <td id="sd(0,3,2)"></td> <td id="sd(0,3,3)"></td></tr>
+				<tr><td id="sd(0,4,0)"></td> <td id="sd(0,4,1)"></td> <td id="sd(0,4,2)"></td> <td id="sd(0,4,3)"></td></tr>
+				<tr><td id="sd(0,5,0)"></td> <td id="sd(0,5,1)"></td> <td id="sd(0,5,2)"></td> <td id="sd(0,5,3)"></td></tr>
+			</table></div>
+
+			<div><table>
+				<tr><th colspan="4" id="sd1"></th></tr>
+				<tr><th>Resultado desejado</th><th> Valor atual</th> <th>Prazo</th> <th>Status</th></tr>
+				<tr><td id="sd(1,0,0)"></td> <td id="sd(1,0,1)"></td> <td id="sd(1,0,2)"></td> <td id="sd(1,0,3)"></td></tr>
+				<tr><td id="sd(1,1,0)"></td> <td id="sd(1,1,1)"></td> <td id="sd(1,1,2)"></td> <td id="sd(1,1,3)"></td></tr>
+			</table></div>
+
+			<div><table>
+				<tr><th colspan="4" id="sd2"></th></tr>
+				<tr><th>Resultado desejado</th><th> Valor atual</th> <th>Prazo</th> <th>Status</th></tr>
+				<tr><td id="sd(2,0,0)"></td> <td id="sd(2,0,1)"></td> <td id="sd(2,0,2)"></td> <td id="sd(2,0,3)"></td></tr>
+			</table></div>
+
+			<div><table>
+				<tr><th colspan="4" id="sd3"></th></tr>
+				<tr><th>Resultado desejado</th><th> Valor atual</th> <th>Prazo</th> <th>Status</th></tr>
+				<tr><td id="sd(3,0,0)"></td> <td id="sd(3,0,1)"></td> <td id="sd(3,0,2)"></td> <td id="sd(3,0,3)"></td></tr>
+			</table></div>
+			</div>
+	
+		</section>
+	</main>
+</body>
+<script type="text/javascript">
+	function showInfo(data, tabletop) {
+    // Caso queria adicionar um alerta
+    //alert('Os resultados foram atualizados') 
+    
+    // Usar dados puxados para substituir elementos
+
+    document.getElementById("hora").innerHTML = "Atualizado em: " + data[0].att_data;
+
+    //Aquisicao de dados
+
+    document.getElementById("aq0").innerHTML = "Objetivo: " + data[0].objetivos;
+    document.getElementById("aq1").innerHTML = "Objetivo: " + data[1].objetivos;
+    document.getElementById("aq2").innerHTML = "Objetivo: " + data[2].objetivos;
+    document.getElementById("aq3").innerHTML = "Objetivo: " + data[3].objetivos;
+
+    document.getElementById("aq(0,0,0)").innerHTML = data[0].aq0;
+    document.getElementById("aq(0,0,1)").innerHTML = data[1].aq0;
+    document.getElementById("aq(0,0,2)").innerHTML = data[2].aq0;
+    document.getElementById("aq(0,0,3)").innerHTML = data[3].aq0;
+
+    document.getElementById("aq(1,0,0)").innerHTML = data[0].aq1;
+    document.getElementById("aq(1,0,1)").innerHTML = data[1].aq1;
+    document.getElementById("aq(1,0,2)").innerHTML = data[2].aq1;
+    document.getElementById("aq(1,0,3)").innerHTML = data[3].aq1;
+
+    document.getElementById("aq(2,0,0)").innerHTML = data[0].aq2;
+    document.getElementById("aq(2,0,1)").innerHTML = data[1].aq2;
+    document.getElementById("aq(2,0,2)").innerHTML = data[2].aq2;
+    document.getElementById("aq(2,0,3)").innerHTML = data[3].aq2;
+
+    document.getElementById("aq(3,0,0)").innerHTML = data[0].aq3;
+    document.getElementById("aq(3,0,1)").innerHTML = data[1].aq3;
+    document.getElementById("aq(3,0,2)").innerHTML = data[2].aq3;
+    document.getElementById("aq(3,0,3)").innerHTML = data[3].aq3;
+
+    //CALCULO ESTRUTURAL
+
+	document.getElementById("calc0").innerHTML = "Objetivo: " + data[0].objetivos;
+
+	document.getElementById("calc(0,0,0)").innerHTML = data[0].calc0;
+	document.getElementById("calc(0,0,1)").innerHTML = data[1].calc0;
+	document.getElementById("calc(0,0,2)").innerHTML = data[2].calc0;
+	document.getElementById("calc(0,0,3)").innerHTML = data[3].calc0;
+	document.getElementById("calc(0,1,0)").innerHTML = data[4].calc0;
+	document.getElementById("calc(0,1,1)").innerHTML = data[5].calc0;
+	document.getElementById("calc(0,1,2)").innerHTML = data[6].calc0;
+	document.getElementById("calc(0,1,3)").innerHTML = data[7].calc0;
+	document.getElementById("calc(0,2,0)").innerHTML = data[8].calc0;
+	document.getElementById("calc(0,2,1)").innerHTML = data[9].calc0;
+	document.getElementById("calc(0,2,2)").innerHTML = data[10].calc0;
+	document.getElementById("calc(0,2,3)").innerHTML = data[11].calc0;
+	document.getElementById("calc(0,3,0)").innerHTML = data[12].calc0;
+	document.getElementById("calc(0,3,1)").innerHTML = data[13].calc0;
+	document.getElementById("calc(0,3,2)").innerHTML = data[14].calc0;
+	document.getElementById("calc(0,3,3)").innerHTML = data[15].calc0;
+	document.getElementById("calc(0,4,0)").innerHTML = data[16].calc0;
+	document.getElementById("calc(0,4,1)").innerHTML = data[17].calc0;
+	document.getElementById("calc(0,4,2)").innerHTML = data[18].calc0;
+	document.getElementById("calc(0,4,3)").innerHTML = data[19].calc0;
+	document.getElementById("calc(0,5,0)").innerHTML = data[20].calc0;
+	document.getElementById("calc(0,5,1)").innerHTML = data[21].calc0;
+	document.getElementById("calc(0,5,2)").innerHTML = data[22].calc0;
+	document.getElementById("calc(0,5,3)").innerHTML = data[23].calc0;	
+
+
+	//CHASSI E DESIGN
+
+	document.getElementById("cha0").innerHTML = "Objetivo: " + data[0].objetivos;
+    document.getElementById("cha1").innerHTML = "Objetivo: " + data[1].objetivos;
+    document.getElementById("cha2").innerHTML = "Objetivo: " + data[2].objetivos;
+    document.getElementById("cha3").innerHTML = "Objetivo: " + data[3].objetivos;
+
+   	document.getElementById("cha(0,0,0)").innerHTML = data[0].cha0;
+   	document.getElementById("cha(0,0,1)").innerHTML = data[1].cha0;
+   	document.getElementById("cha(0,0,2)").innerHTML = data[2].cha0;
+   	document.getElementById("cha(0,0,3)").innerHTML = data[3].cha0;
+   	document.getElementById("cha(0,1,0)").innerHTML = data[4].cha0;
+   	document.getElementById("cha(0,1,1)").innerHTML = data[5].cha0;
+   	document.getElementById("cha(0,1,2)").innerHTML = data[6].cha0;
+   	document.getElementById("cha(0,1,3)").innerHTML = data[7].cha0;
+   	document.getElementById("cha(0,2,0)").innerHTML = data[8].cha0;
+   	document.getElementById("cha(0,2,1)").innerHTML = data[9].cha0;
+   	document.getElementById("cha(0,2,2)").innerHTML = data[10].cha0;
+   	document.getElementById("cha(0,2,3)").innerHTML = data[11].cha0;
+   	document.getElementById("cha(0,3,0)").innerHTML = data[12].cha0;
+   	document.getElementById("cha(0,3,1)").innerHTML = data[13].cha0;
+   	document.getElementById("cha(0,3,2)").innerHTML = data[14].cha0;
+   	document.getElementById("cha(0,3,3)").innerHTML = data[15].cha0;
+
+   	document.getElementById("cha(1,0,0)").innerHTML = data[0].cha1;
+   	document.getElementById("cha(1,0,1)").innerHTML = data[1].cha1;
+   	document.getElementById("cha(1,0,2)").innerHTML = data[2].cha1;
+   	document.getElementById("cha(1,0,3)").innerHTML = data[3].cha1;
+
+   	document.getElementById("cha(2,0,0)").innerHTML = data[0].cha2;
+   	document.getElementById("cha(2,0,1)").innerHTML = data[1].cha2;
+   	document.getElementById("cha(2,0,2)").innerHTML = data[2].cha2;
+   	document.getElementById("cha(2,0,3)").innerHTML = data[3].cha2;
+   	document.getElementById("cha(2,1,0)").innerHTML = data[4].cha2;
+   	document.getElementById("cha(2,1,1)").innerHTML = data[5].cha2;
+   	document.getElementById("cha(2,1,2)").innerHTML = data[6].cha2;
+   	document.getElementById("cha(2,1,3)").innerHTML = data[7].cha2;
+   	document.getElementById("cha(2,2,0)").innerHTML = data[8].cha2;
+   	document.getElementById("cha(2,2,1)").innerHTML = data[9].cha2;
+   	document.getElementById("cha(2,2,2)").innerHTML = data[10].cha2;
+   	document.getElementById("cha(2,2,3)").innerHTML = data[11].cha2;
+
+   	document.getElementById("cha(3,0,0)").innerHTML = data[0].cha3;
+   	document.getElementById("cha(3,0,1)").innerHTML = data[1].cha3;
+   	document.getElementById("cha(3,0,2)").innerHTML = data[2].cha3;
+   	document.getElementById("cha(3,0,3)").innerHTML = data[3].cha3;
+   	document.getElementById("cha(3,1,0)").innerHTML = data[4].cha3;
+   	document.getElementById("cha(3,1,1)").innerHTML = data[5].cha3;
+   	document.getElementById("cha(3,1,2)").innerHTML = data[6].cha3;
+   	document.getElementById("cha(3,1,3)").innerHTML = data[7].cha3;
+   	document.getElementById("cha(3,2,0)").innerHTML = data[8].cha3;
+   	document.getElementById("cha(3,2,1)").innerHTML = data[9].cha3;
+   	document.getElementById("cha(3,2,2)").innerHTML = data[10].cha3;
+   	document.getElementById("cha(3,2,3)").innerHTML = data[11].cha3;
+
+	// ELETRICA
+
+	document.getElementById("ele0").innerHTML = "Objetivo: " + data[0].objetivos;
+    document.getElementById("ele1").innerHTML = "Objetivo: " + data[1].objetivos;
+    document.getElementById("ele2").innerHTML = "Objetivo: " + data[2].objetivos;
+    document.getElementById("ele3").innerHTML = "Objetivo: " + data[3].objetivos;
+ 
+ 	document.getElementById("ele(0,0,0)").innerHTML = data[0].ele0;
+   	document.getElementById("ele(0,0,1)").innerHTML = data[1].ele0;
+   	document.getElementById("ele(0,0,2)").innerHTML = data[2].ele0;
+   	document.getElementById("ele(0,0,3)").innerHTML = data[3].ele0;
+   	document.getElementById("ele(0,1,0)").innerHTML = data[4].ele0;
+   	document.getElementById("ele(0,1,1)").innerHTML = data[5].ele0;
+   	document.getElementById("ele(0,1,2)").innerHTML = data[6].ele0;
+   	document.getElementById("ele(0,1,3)").innerHTML = data[7].ele0;
+   	document.getElementById("ele(0,2,0)").innerHTML = data[8].ele0;
+   	document.getElementById("ele(0,2,1)").innerHTML = data[9].ele0;
+   	document.getElementById("ele(0,2,2)").innerHTML = data[10].ele0;
+    document.getElementById("ele(0,2,3)").innerHTML = data[11].ele0;
+   	
+    document.getElementById("ele(1,0,0)").innerHTML = data[0].ele1;
+   	document.getElementById("ele(1,0,1)").innerHTML = data[1].ele1;
+   	document.getElementById("ele(1,0,2)").innerHTML = data[2].ele1;
+   	document.getElementById("ele(1,0,3)").innerHTML = data[3].ele1;
+   	
+	document.getElementById("ele(2,0,0)").innerHTML = data[0].ele2;
+   	document.getElementById("ele(2,0,1)").innerHTML = data[1].ele2;
+   	document.getElementById("ele(2,0,2)").innerHTML = data[2].ele2;
+   	document.getElementById("ele(2,0,3)").innerHTML = data[3].ele2;
+   	document.getElementById("ele(2,1,0)").innerHTML = data[4].ele2;
+   	document.getElementById("ele(2,1,1)").innerHTML = data[5].ele2;
+   	document.getElementById("ele(2,1,2)").innerHTML = data[6].ele2;
+   	document.getElementById("ele(2,1,3)").innerHTML = data[7].ele2;
+   
+    document.getElementById("ele(3,0,0)").innerHTML = data[0].ele3;
+   	document.getElementById("ele(3,0,1)").innerHTML = data[1].ele3;
+   	document.getElementById("ele(3,0,2)").innerHTML = data[2].ele3;
+   	document.getElementById("ele(3,0,3)").innerHTML = data[3].ele3;
+   	
+
+   	//FREIOS
+
+	document.getElementById("fre0").innerHTML = "Objetivo: " + data[0].objetivos;
+    document.getElementById("fre1").innerHTML = "Objetivo: " + data[1].objetivos;
+    document.getElementById("fre2").innerHTML = "Objetivo: " + data[2].objetivos;
+    document.getElementById("fre3").innerHTML = "Objetivo: " + data[3].objetivos;
+
+ 	document.getElementById("fre(0,0,0)").innerHTML = data[0].fre0;
+ 	document.getElementById("fre(0,0,1)").innerHTML = data[1].fre0;
+ 	document.getElementById("fre(0,0,2)").innerHTML = data[2].fre0;
+ 	document.getElementById("fre(0,0,3)").innerHTML = data[3].fre0;
+ 	document.getElementById("fre(0,1,0)").innerHTML = data[4].fre0;
+ 	document.getElementById("fre(0,1,1)").innerHTML = data[5].fre0;
+ 	document.getElementById("fre(0,1,2)").innerHTML = data[6].fre0;
+ 	document.getElementById("fre(0,1,3)").innerHTML = data[7].fre0;
+	document.getElementById("fre(0,2,0)").innerHTML = data[8].fre0;
+	document.getElementById("fre(0,2,1)").innerHTML = data[9].fre0;
+	document.getElementById("fre(0,2,2)").innerHTML = data[10].fre0;
+	document.getElementById("fre(0,2,3)").innerHTML = data[11].fre0;
+
+	document.getElementById("fre(1,0,0)").innerHTML = data[0].fre1;
+ 	document.getElementById("fre(1,0,1)").innerHTML = data[1].fre1;
+ 	document.getElementById("fre(1,0,2)").innerHTML = data[2].fre1;
+ 	document.getElementById("fre(1,0,3)").innerHTML = data[3].fre1;
+ 	
+ 	document.getElementById("fre(2,0,0)").innerHTML = data[0].fre2;
+ 	document.getElementById("fre(2,0,1)").innerHTML = data[1].fre2;
+ 	document.getElementById("fre(2,0,2)").innerHTML = data[2].fre2;
+ 	document.getElementById("fre(2,0,3)").innerHTML = data[3].fre2;
+ 	document.getElementById("fre(2,1,0)").innerHTML = data[4].fre2;
+ 	document.getElementById("fre(2,1,1)").innerHTML = data[5].fre2;
+ 	document.getElementById("fre(2,1,2)").innerHTML = data[6].fre2;
+ 	document.getElementById("fre(2,1,3)").innerHTML = data[7].fre2;
+
+ 	document.getElementById("fre(3,0,0)").innerHTML = data[0].fre3;
+ 	document.getElementById("fre(3,0,1)").innerHTML = data[1].fre3;
+ 	document.getElementById("fre(3,0,2)").innerHTML = data[2].fre3;
+ 	document.getElementById("fre(3,0,3)").innerHTML = data[3].fre3;
+ 	document.getElementById("fre(3,1,0)").innerHTML = data[4].fre3;
+ 	document.getElementById("fre(3,1,1)").innerHTML = data[5].fre3;
+ 	document.getElementById("fre(3,1,2)").innerHTML = data[6].fre3;
+ 	document.getElementById("fre(3,1,3)").innerHTML = data[7].fre3;
+ 	
+ 	
+    //GESTORES
+    
+    document.getElementById("pm0").innerHTML = "Objetivo: " + data[0].objetivos;
+    document.getElementById("pm1").innerHTML = "Objetivo: " + data[1].objetivos;
+   
+    document.getElementById("pm(0,0,0)").innerHTML = data[0].pm0;
+    document.getElementById("pm(0,0,1)").innerHTML = data[1].pm0;
+    document.getElementById("pm(0,0,2)").innerHTML = data[2].pm0;
+    document.getElementById("pm(0,0,3)").innerHTML = data[3].pm0;
+    document.getElementById("pm(0,1,0)").innerHTML = data[5].pm0;
+    document.getElementById("pm(0,1,1)").innerHTML = data[6].pm0;
+    document.getElementById("pm(0,1,2)").innerHTML = data[7].pm0;
+    document.getElementById("pm(0,1,3)").innerHTML = data[8].pm0;
+	document.getElementById("pm(0,2,0)").innerHTML = data[10].pm0;
+    document.getElementById("pm(0,2,1)").innerHTML = data[11].pm0;
+    document.getElementById("pm(0,2,2)").innerHTML = data[12].pm0;
+    document.getElementById("pm(0,2,3)").innerHTML = data[13].pm0;
+    
+    document.getElementById("pm(1,0,0)").innerHTML = data[0].pm1;
+    document.getElementById("pm(1,0,1)").innerHTML = data[1].pm1;
+    document.getElementById("pm(1,0,2)").innerHTML = data[2].pm1;
+    document.getElementById("pm(1,0,3)").innerHTML = data[3].pm1;
+	
+	//POWERTRAIN
+
+	document.getElementById("pow0").innerHTML = "Objetivo: " + data[0].objetivos;
+    document.getElementById("pow1").innerHTML = "Objetivo: " + data[1].objetivos;
+    document.getElementById("pow2").innerHTML = "Objetivo: " + data[2].objetivos;
+    document.getElementById("pow3").innerHTML = "Objetivo: " + data[3].objetivos;
+
+	document.getElementById("pow(0,0,0)").innerHTML = data[0].pow0;
+ 	document.getElementById("pow(0,0,1)").innerHTML = data[1].pow0;
+ 	document.getElementById("pow(0,0,2)").innerHTML = data[2].pow0;
+ 	document.getElementById("pow(0,0,3)").innerHTML = data[3].pow0;
+	document.getElementById("pow(0,1,0)").innerHTML = data[4].pow0;
+ 	document.getElementById("pow(0,1,1)").innerHTML = data[5].pow0;
+ 	document.getElementById("pow(0,1,2)").innerHTML = data[6].pow0;
+ 	document.getElementById("pow(0,1,3)").innerHTML = data[7].pow0;
+	document.getElementById("pow(0,2,0)").innerHTML = data[8].pow0;
+ 	document.getElementById("pow(0,2,1)").innerHTML = data[9].pow0;
+ 	document.getElementById("pow(0,2,2)").innerHTML = data[10].pow0;
+ 	document.getElementById("pow(0,2,3)").innerHTML = data[11].pow0;
+	document.getElementById("pow(0,3,0)").innerHTML = data[12].pow0;
+ 	document.getElementById("pow(0,3,1)").innerHTML = data[13].pow0;
+ 	document.getElementById("pow(0,3,2)").innerHTML = data[14].pow0;
+ 	document.getElementById("pow(0,3,3)").innerHTML = data[15].pow0;
+
+ 	document.getElementById("pow(1,0,0)").innerHTML = data[0].pow1;
+ 	document.getElementById("pow(1,0,1)").innerHTML = data[1].pow1;
+ 	document.getElementById("pow(1,0,2)").innerHTML = data[2].pow1;
+ 	document.getElementById("pow(1,0,3)").innerHTML = data[3].pow1;
+	document.getElementById("pow(1,1,0)").innerHTML = data[4].pow1;
+ 	document.getElementById("pow(1,1,1)").innerHTML = data[5].pow1;
+ 	document.getElementById("pow(1,1,2)").innerHTML = data[6].pow1;
+ 	document.getElementById("pow(1,1,3)").innerHTML = data[7].pow1;
+	
+ 	document.getElementById("pow(2,0,0)").innerHTML = data[0].pow2;
+ 	document.getElementById("pow(2,0,1)").innerHTML = data[1].pow2;
+ 	document.getElementById("pow(2,0,2)").innerHTML = data[2].pow2;
+ 	document.getElementById("pow(2,0,3)").innerHTML = data[3].pow2;
+
+ 	document.getElementById("pow(3,0,0)").innerHTML = data[0].pow3;
+ 	document.getElementById("pow(3,0,1)").innerHTML = data[1].pow3;
+ 	document.getElementById("pow(3,0,2)").innerHTML = data[2].pow3;
+ 	document.getElementById("pow(3,0,3)").innerHTML = data[3].pow3;
+	document.getElementById("pow(3,1,0)").innerHTML = data[4].pow3;
+ 	document.getElementById("pow(3,1,1)").innerHTML = data[5].pow3;
+ 	document.getElementById("pow(3,1,2)").innerHTML = data[6].pow3;
+ 	document.getElementById("pow(3,1,3)").innerHTML = data[7].pow3;
+	document.getElementById("pow(3,2,0)").innerHTML = data[8].pow3;
+ 	document.getElementById("pow(3,2,1)").innerHTML = data[9].pow3;
+ 	document.getElementById("pow(3,2,2)").innerHTML = data[10].pow3;
+ 	document.getElementById("pow(3,2,3)").innerHTML = data[11].pow3;
+
+ 	///SUSP / DIR
+
+ 	document.getElementById("sd0").innerHTML = "Objetivo: " + data[0].objetivos;
+    document.getElementById("sd1").innerHTML = "Objetivo: " + data[1].objetivos;
+    document.getElementById("sd2").innerHTML = "Objetivo: " + data[2].objetivos;
+    document.getElementById("sd3").innerHTML = "Objetivo: " + data[3].objetivos;
+    
+    document.getElementById("sd(0,0,0)").innerHTML = data[0].sd0;
+    document.getElementById("sd(0,0,1)").innerHTML = data[1].sd0;
+	document.getElementById("sd(0,0,2)").innerHTML = data[2].sd0;
+	document.getElementById("sd(0,0,3)").innerHTML = data[3].sd0;
+	document.getElementById("sd(0,1,0)").innerHTML = data[4].sd0;
+    document.getElementById("sd(0,1,1)").innerHTML = data[5].sd0;
+	document.getElementById("sd(0,1,2)").innerHTML = data[6].sd0;
+	document.getElementById("sd(0,1,3)").innerHTML = data[7].sd0;
+    document.getElementById("sd(0,2,0)").innerHTML = data[8].sd0;
+    document.getElementById("sd(0,2,1)").innerHTML = data[9].sd0;
+	document.getElementById("sd(0,2,2)").innerHTML = data[10].sd0;
+	document.getElementById("sd(0,2,3)").innerHTML = data[11].sd0;
+    document.getElementById("sd(0,3,0)").innerHTML = data[12].sd0;
+    document.getElementById("sd(0,3,1)").innerHTML = data[13].sd0;
+	document.getElementById("sd(0,3,2)").innerHTML = data[14].sd0;
+	document.getElementById("sd(0,3,3)").innerHTML = data[15].sd0;
+    document.getElementById("sd(0,4,0)").innerHTML = data[16].sd0;
+    document.getElementById("sd(0,4,1)").innerHTML = data[17].sd0;
+	document.getElementById("sd(0,4,2)").innerHTML = data[18].sd0;
+	document.getElementById("sd(0,4,3)").innerHTML = data[19].sd0;
+    document.getElementById("sd(0,5,0)").innerHTML = data[20].sd0;
+    document.getElementById("sd(0,5,1)").innerHTML = data[21].sd0;
+	document.getElementById("sd(0,5,2)").innerHTML = data[22].sd0;
+	document.getElementById("sd(0,5,3)").innerHTML = data[23].sd0;
+
+    document.getElementById("sd(1,0,0)").innerHTML = data[0].sd1;
+    document.getElementById("sd(1,0,1)").innerHTML = data[1].sd1;
+	document.getElementById("sd(1,0,2)").innerHTML = data[2].sd1;
+	document.getElementById("sd(1,0,3)").innerHTML = data[3].sd1;
+	document.getElementById("sd(1,1,0)").innerHTML = data[4].sd1;
+    document.getElementById("sd(1,1,1)").innerHTML = data[5].sd1;
+	document.getElementById("sd(1,1,2)").innerHTML = data[6].sd1;
+	document.getElementById("sd(1,1,3)").innerHTML = data[7].sd1;
+
+    document.getElementById("sd(2,0,0)").innerHTML = data[0].sd2;
+    document.getElementById("sd(2,0,1)").innerHTML = data[1].sd2;
+	document.getElementById("sd(2,0,2)").innerHTML = data[2].sd2;
+	document.getElementById("sd(2,0,3)").innerHTML = data[3].sd2;
+
+    document.getElementById("sd(3,0,0)").innerHTML = data[0].sd3;
+    document.getElementById("sd(3,0,1)").innerHTML = data[1].sd3;
+	document.getElementById("sd(3,0,2)").innerHTML = data[2].sd3;
+	document.getElementById("sd(3,0,3)").innerHTML = data[3].sd3;    
+    
+    console.log(data);
+  }
+</script>
+</html>
