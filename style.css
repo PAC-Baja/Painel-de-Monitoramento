@@ -1,0 +1,92 @@
+body{
+	padding: 0px;
+	margin: 0px 0px 5px 0px;
+}
+
+header{
+	background: #003153;
+	color: #ffffff;
+	background-image: url("images/cover.jpg");
+	padding: 25px;
+	font-family: Arial;
+}
+
+header img{
+	width: 12.5%;
+	height: 12.5%;
+	display: block;
+	float: right;
+}
+
+header p{
+	display: inline;
+	float: right;
+}
+
+nav a{
+	display: inline-block;
+	margin: 2px;
+	border-radius: 4px;
+	text-decoration: none;
+	padding: 10px;
+	color:#000000;
+	background-color: #FFE135;
+}
+
+a:hover{
+	background-color:#ffffff;
+	color:#666666;
+	transition-property:background-color,color;
+	transition-duration: 1s;
+	transition-delay: 0.25s;
+}
+
+.active{
+	background-color: #87CEEB;
+	font-weight: bold;
+}
+
+aside{
+	width:35%;
+	height: 100%;
+	display:inline-block;
+	float:right;
+	margin-top: 1%;
+}
+
+aside img{
+	width: 100%;
+	height: 100%;
+}
+
+.index{
+	width:60%;
+	margin-left: 5%;
+	display:inline-block;
+	float:left;
+	font-family: Arial;
+}
+
+h2{
+	text-transform: uppercase;
+}
+
+.comum{
+	margin-left: 5%;
+	margin-right: 5%;
+	font-family: Arial;
+}
+
+div{
+	margin-right:auto;
+	margin-left: auto;
+	width: 80%;
+}
+
+h3{
+	font-style: italic;
+}
+
+#aq, #calc, #cap, #ele, #fre, #gp, #qua, #cha, #des, #pm, #adm, #pow, #sd, #fin, #rp{
+	display: none;
+}
